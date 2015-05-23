@@ -1,8 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
+<h2><%= @blog.title %></h2>
+<h3>Posts</h3>
+
+<% @posts.each do |post| %>
+  <h4><%= post.title %></h4>
+  <div>
+    <%= post.content %>
+  </div>
+<% end %>
+
 
 <%= link_to 'Blogs', blogs_path %>
